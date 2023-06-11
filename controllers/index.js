@@ -1,13 +1,15 @@
-const routes = require('express').Router();
-// const apiRoutes = require('./api');
-// routes.use('/api', apiRoutes);
+const router = require('express').Router();
+const apiRoutes = require('./api');
 
-routes.get('/', (req, res) => {
+// Server static HTML
+router.get('/', (req, res) => {
   res.render('home');
 });
 
-routes.get('/login', (req, res) => {
-  res.render('login');
+router.get('/login', (req, res) => {
+  res.render('login', { title: 'testicles' });
 });
 
-module.exports = routes;
+router.use('/api', apiRoutes);
+
+module.exports = router;
