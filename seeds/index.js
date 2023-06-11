@@ -7,8 +7,8 @@ const posts = require('./posts-seed.json');
 const users = require('./users-seed.json');
 
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
   try {
+    await sequelize.sync({ force: true });
     // Model.bulkCreate() ignores hooks. Use loops to use Model.create() instead
     // To hash passwords before injecting into db
     for (const user of users) {
