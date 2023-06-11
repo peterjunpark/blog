@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const bcrypt = require('brcypt');
+const bcrypt = require('bcrypt');
 
 const saltRounds = 5;
 const hashPassword = async (password) => {
@@ -19,6 +19,7 @@ User.init(
   {
     id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       autoIncrement: true,
       primaryKey: true,
     },
@@ -39,15 +40,18 @@ User.init(
   },
   {
     sequelize,
+    underscore: true,
     modelName: 'user',
     timestamps: false,
     hooks: {
       beforeCreate: async (userData) => {
-        userData.password = hashPassword(userData);
+        userData.password = await hashPassword(userData.password);
         userData.email = userData.email.toLowerCase();
       },
       beforeUpdate: async (userData) => {
-        userData.password = hashPassword(userData);
+        if (userData.password) {
+          userData.password = await hashPassword(userData.password);
+        }
         userData.email = userData.email.toLowerCase();
       },
     },
