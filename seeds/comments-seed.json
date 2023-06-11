@@ -1,0 +1,42 @@
+[
+  {
+    "body": "Nice to meet you!",
+    "user_id": 2,
+    "post_id": 1
+  },
+  {
+    "body": "Hi! Welcome to the blog!",
+    "user_id": 4,
+    "post_id": 1
+  },
+  {
+    "body": "Agreed!",
+    "user_id": 2,
+    "post_id": 2
+  },
+  {
+    "body": "Wow... Thanks for sharing.",
+    "user_id": 1,
+    "post_id": 3
+  },
+  {
+    "body": "I love this :))))))",
+    "user_id": 3,
+    "post_id": 4
+  },
+  {
+    "body": "Incredible intel!",
+    "user_id": 1,
+    "post_id": 5
+  },
+  {
+    "body": "This is fascinating... but I'm slightly confused. What is the purpose of async/await? Don't promises do the same thing?",
+    "user_id": 2,
+    "post_id": 5
+  },
+  {
+    "body": "nvm! Figured it out. Thanks all.",
+    "user_id": 2,
+    "post_id": 5
+  }
+]

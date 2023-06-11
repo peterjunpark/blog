@@ -1,0 +1,27 @@
+[
+  {
+    "username": "qkr0wns",
+    "password": "password1234",
+    "email": "peterjpark@pm.me"
+  },
+  {
+    "username": "catlover1",
+    "password": "password%^&*",
+    "email": "catlover1@email.com"
+  },
+  {
+    "username": "kittyfan2",
+    "password": "password5678",
+    "email": "kittyfan2@email.com"
+  },
+  {
+    "username": "ilikepuppies3",
+    "password": "password90-=",
+    "email": "ilikepuppies3@email.com"
+  },
+  {
+    "username": "dogsarecool4",
+    "password": "password!@#$",
+    "email": "dogsarecool4@email.com"
+  }
+]
