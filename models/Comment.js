@@ -34,7 +34,7 @@ Comment.init(
   },
   {
     sequelize,
-    underscore: true,
+    underscored: true,
     modelName: 'comment',
   }
 );

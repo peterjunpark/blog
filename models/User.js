@@ -40,7 +40,7 @@ User.init(
   },
   {
     sequelize,
-    underscore: true,
+    underscored: true,
     modelName: 'user',
     timestamps: false,
     hooks: {
