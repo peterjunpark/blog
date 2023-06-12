@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npx nodemon server.js",
     "schema": "mysql -u root -p < db/schema.sql",
-    "seed": "node seeds/index.js"
+    "seed": "node seeds/index.js",
+    "restart": "mysql -u root -p <db/schema.sql; node seeds/index.js; npx nodemon server.js"
   },
   "keywords": [],
   "author": "qkr0wns",
