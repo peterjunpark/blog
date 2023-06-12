@@ -13,12 +13,13 @@ const sess = {
   secret: 'super duper secret secret',
   cookie: {
     maxAge: 1000 * 60 * 60 * 24,
-    store: new SequelizeStore({
-      db: sequelize,
-    }),
   },
   resave: false,
   saveUninitialized: false,
+  // secure: false,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
 };
 
 app.use(express.static(path.join(__dirname, 'public')));

@@ -1,27 +1,27 @@
 [
   {
-    "username": "qkr0wns",
-    "password": "password1234",
-    "email": "peterjpark@pm.me"
+    "username": "user1",
+    "password": "asdf",
+    "email": "user1@email.com"
   },
   {
-    "username": "catlover1",
-    "password": "password%^&*",
-    "email": "catlover1@email.com"
+    "username": "user2",
+    "password": "asdf",
+    "email": "user2@email.com"
   },
   {
-    "username": "kittyfan2",
-    "password": "password5678",
-    "email": "kittyfan2@email.com"
+    "username": "user3",
+    "password": "asdf",
+    "email": "user3@email.com"
   },
   {
-    "username": "ilikepuppies3",
-    "password": "password90-=",
-    "email": "ilikepuppies3@email.com"
+    "username": "user4",
+    "password": "asdf",
+    "email": "user4@email.com"
   },
   {
-    "username": "dogsarecool4",
-    "password": "password!@#$",
-    "email": "dogsarecool4@email.com"
+    "username": "user5",
+    "password": "asdf",
+    "email": "user5@email.com"
   }
 ]
