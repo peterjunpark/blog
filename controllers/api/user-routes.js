@@ -55,12 +55,10 @@ userRouter.post('/', async (req, res) => {
 });
 
 // Delete user.
-userRouter.delete('/', async (req, res) => {
+userRouter.delete('/:id', async (req, res) => {
   try {
-    await User.destroy({
-      // Find by session id.
-      where: { id: req.session.userId },
-    });
+    await User.destroy({ where: { id: req.params.id } });
+    req.session.destroy();
     res.status(204).end();
   } catch (err) {
     console.error(err);
