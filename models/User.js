@@ -46,7 +46,7 @@ User.init(
     hooks: {
       beforeCreate: async (userData) => {
         userData.password = await hashPassword(userData.password);
-        userData.email = userData.email.toLowerCase();
+        if (userData.email) userData.email = userData.email.toLowerCase();
       },
       beforeUpdate: async (userData) => {
         if (userData.password) {
