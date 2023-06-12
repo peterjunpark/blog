@@ -54,52 +54,19 @@ userRouter.post('/', async (req, res) => {
   }
 });
 
-// User sign-in
-userRouter.post('/login', async (req, res) => {
+// Delete user.
+userRouter.delete('/', async (req, res) => {
   try {
-    // Get username or email from client.
-    const [userByUsername, userByEmail] = await Promise.all([
-      User.findOne({
-        where: { username: req.body.login },
-      }),
-      User.findOne({
-        where: { email: req.body.login },
-      }),
-    ]);
-    // Check if the user exists.
-    const user = userByUsername || userByEmail;
-    if (!user) {
-      res.status(404).json({ message: 'User not found.' });
-      return;
-    }
-    // Check password.
-    const auth = await user.authPassword(req.body.password);
-    if (!auth) {
-      res.status(401).json({ message: 'Wrong password.' });
-      return;
-    }
-    // Add userId and loggedIn data to session. Save session to db.
-    req.session.save(() => {
-      req.session.userId = user.id;
-      req.session.loggedIn = true;
-      res.json({ message: 'Successfully signed in.', user: user });
+    await User.destroy({
+      // Find by session id.
+      where: { id: req.session.userId },
     });
+    res.status(204).end();
   } catch (err) {
     console.error(err);
     res
       .status(500)
-      .json({ message: 'Internal server error. Could not sign in.' });
-  }
-});
-
-userRouter.post('/logout', (res, req) => {
-  if (req.session.loggedIn) {
-    req.session.destroy();
-    res.status(204).end();
-  } else {
-    res
-      .status(404)
-      .json({ message: 'Internal server error. Sign out failed.' });
+      .json({ message: 'Internal server error. Could not delete user.' });
   }
 });
 
