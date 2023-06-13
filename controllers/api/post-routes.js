@@ -15,13 +15,30 @@ postRouter.get('/', async (req, res) => {
   }
 });
 
-postRouter.get('/:id', async (req, res) => {
+// postRouter.get('/:id', async (req, res) => {
+//   try {
+//     const post = await Post.findByPk(req.params.id);
+//     res.json(post);
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json({ message: 'Internal server error.' });
+//   }
+// });
+
+postRouter.post('/', async (req, res) => {
   try {
-    const post = await Post.findByPk(req.params.id);
-    res.json(post);
+    const post = {
+      user_id: req.session.userId,
+      title: req.body.title,
+      body: req.body.body,
+    };
+    const newPost = await Post.create(post);
+    res.json(newPost);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: 'Internal server error.' });
+    res
+      .status(500)
+      .json({ message: 'Internal server error. Post could not be created.' });
   }
 });
 

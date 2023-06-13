@@ -1,15 +1,8 @@
 const router = require('express').Router();
+const pagesRoutes = require('./pages');
 const apiRoutes = require('./api');
 
-// Server static HTML
-router.get('/', (req, res) => {
-  res.render('home', { loggedIn: req.session.loggedIn });
-});
-
-router.get('/login', (req, res) => {
-  res.render('login', { title: 'testicles' });
-});
-
+router.use(pagesRoutes);
 router.use('/api', apiRoutes);
 
 module.exports = router;
