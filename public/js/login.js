@@ -18,7 +18,7 @@ async function login(e) {
     if (response.ok) {
       document.location.replace('/');
     } else {
-      alert('Check your login credentials.');
+      document.reload();
     }
   } catch (err) {
     console.error(err);
