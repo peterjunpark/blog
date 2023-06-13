@@ -14,3 +14,8 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.post-card,
+.post-card * {
+    cursor: pointer;
+}

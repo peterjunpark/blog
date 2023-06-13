@@ -1,0 +1,32 @@
+{
+  "username": "user1",
+  "email": "user1@email.com",
+  "posts": [
+    {
+      "title": "My first post!",
+      "body": "Hello, my name is Peter. Just wanted to introduce myself.",
+      "createdAt": "2023-06-13T17:52:27.000Z",
+      "updatedAt": "2023-06-13T17:52:27.000Z"
+    },
+    {
+      "title": "My second post!",
+      "body": "This website is really cool! What do you guys think? Let me know in the comments below.",
+      "createdAt": "2023-06-13T17:52:27.000Z",
+      "updatedAt": "2023-06-13T17:52:27.000Z"
+    }
+  ],
+  "comments": [
+    {
+      "body": "Wow... Thanks for sharing.",
+      "createdAt": "2023-06-13T17:52:27.000Z",
+      "updatedAt": "2023-06-13T17:52:27.000Z",
+      "post": { "title": "Learn Javascript" }
+    },
+    {
+      "body": "Incredible intel!",
+      "createdAt": "2023-06-13T17:52:27.000Z",
+      "updatedAt": "2023-06-13T17:52:27.000Z",
+      "post": { "title": "Let's Talk About Asynchronous Programming" }
+    }
+  ]
+}
