@@ -1,9 +1,23 @@
-<header>
-  <h1 class='text-uppercase'>{{title}}</h1>
-</header>
-<main>
-  {{>login-form}}
-</main>
+<form id='login-form' class='d-flex flex-column col-2'>
+  <div class='form-group my-2'>
+    <label for='login-name' class='text-muted'>Username or email</label>
+    <input
+      type='text'
+      class='form-control'
+      id='login-name'
+      placeholder='What you call yourself online'
+    />
+  </div>
+  <div class='form-group my-2'>
+    <label for='login-pass' class='text-muted'>Password</label>
+    <input
+      type='password'
+      class='form-control'
+      id='login-pass'
+      placeholder='Super secret password'
+    />
+  </div>
+  <button type='submit' class='btn btn-secondary my-2'>Sign in</button>
+</form>
 
-
-<script src="../js/login.js"></script>
+<script src='../js/login.js'></script>
