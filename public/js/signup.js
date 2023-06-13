@@ -17,8 +17,6 @@ async function signup(e) {
     });
 
     if (response.ok) {
-      alert('signed up!');
-
       //   Sign in automatically after signing up
       const response = await fetch('/api/user/login', {
         method: 'POST',

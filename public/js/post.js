@@ -6,7 +6,6 @@ posts.forEach((post) => {
     if (clickedPost) {
       const postId = clickedPost.getAttribute('data-post-id');
       location.replace(`/post/${postId}`);
-      console.log('Clicked post ID:', postId);
     }
   });
 });

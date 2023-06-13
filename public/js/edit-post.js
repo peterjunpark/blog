@@ -65,12 +65,15 @@ async function deletePost() {
 newCommentBtn.addEventListener('click', () => {
   newCommentForm.classList.remove('d-none');
   newCommentBtn.classList.add('d-none');
+  newCommentForm.addEventListener('submit', publishComment);
 });
-deletePostBtn.addEventListener('click', deletePost);
-editPostBtn.addEventListener('click', () => {
-  editBtnGroup.classList.add('d-none');
-  editPostForm.classList.remove('d-none');
-  commentsContainer.classList.add('d-none');
-});
-editPostForm.addEventListener('submit', editPost);
-newCommentForm.addEventListener('submit', publishComment);
+
+if (editPostBtn) {
+  editPostBtn.addEventListener('click', () => {
+    editBtnGroup.classList.add('d-none');
+    editPostForm.classList.remove('d-none');
+    commentsContainer.classList.add('d-none');
+    editPostForm.addEventListener('submit', editPost);
+  });
+  deletePostBtn.addEventListener('click', deletePost);
+}
