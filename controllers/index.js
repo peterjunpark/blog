@@ -3,7 +3,7 @@ const apiRoutes = require('./api');
 
 // Server static HTML
 router.get('/', (req, res) => {
-  res.render('home');
+  res.render('home', { loggedIn: req.session.loggedIn });
 });
 
 router.get('/login', (req, res) => {
