@@ -1,8 +1,10 @@
 const newCommentBtn = document.querySelector('#new-comment-btn');
 const newCommentForm = document.querySelector('#new-comment-form');
 const editBtnGroup = document.querySelector('#edit-btn-group');
-const deletePostBtn = document.querySelector('#delete-post-btn');
 const editPostBtn = document.querySelector('#edit-post-btn');
+const editPostForm = document.querySelector('#edit-post-form');
+const deletePostBtn = document.querySelector('#delete-post-btn');
+const commentsContainer = document.querySelector('#comments-container');
 const currentPost = document
   .querySelector('#post')
   .getAttribute('data-post-id');
@@ -30,8 +32,26 @@ async function publishComment(e) {
   }
 }
 
+async function editPost(e) {
+  e.preventDefault();
+
+  const newPost = {
+    title: document.querySelector('#edit-post-title').value.trim(),
+    body: document.querySelector('#edit-post-body').value.trim(),
+  };
+
+  const response = await fetch(`/api/post/${currentPost}`, {
+    method: 'PUT',
+    body: JSON.stringify(newPost),
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+    window.location.reload();
+  }
+}
+
 async function deletePost() {
-  alert('delete');
   const response = await fetch(`/api/post/${currentPost}`, {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
@@ -42,15 +62,15 @@ async function deletePost() {
   }
 }
 
-async function editPost() {
-  alert('edit');
-  editBtnGroup.classList.add('d-none');
-}
-
 newCommentBtn.addEventListener('click', () => {
   newCommentForm.classList.remove('d-none');
   newCommentBtn.classList.add('d-none');
 });
-newCommentForm.addEventListener('submit', publishComment);
 deletePostBtn.addEventListener('click', deletePost);
-editPostBtn.addEventListener('click', editPost);
+editPostBtn.addEventListener('click', () => {
+  editBtnGroup.classList.add('d-none');
+  editPostForm.classList.remove('d-none');
+  commentsContainer.classList.add('d-none');
+});
+editPostForm.addEventListener('submit', editPost);
+newCommentForm.addEventListener('submit', publishComment);

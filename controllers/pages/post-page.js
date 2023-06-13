@@ -21,10 +21,10 @@ router.get('/:id', authUser, async (req, res) => {
     ],
   });
   const post = await rawPost.get({ plain: true });
-  const postOwner = post.user_id === req.session.userId;
 
   // Check if current user is owner of the post. If yes, enable delete and edit buttons.
   // if (req.session.userId === )
+  const postOwner = post.user_id === req.session.userId;
   res.render('post', { post, loggedIn: req.session.loggedIn, postOwner });
 });
 

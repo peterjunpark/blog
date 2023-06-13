@@ -45,4 +45,23 @@ postRouter.delete('/:id', async (req, res) => {
   }
 });
 
+postRouter.put('/:id', async (req, res) => {
+  try {
+    await Post.update(
+      {
+        title: req.body.title,
+        body: req.body.body,
+        user_id: req.session.userId,
+      },
+      { where: { id: req.params.id } }
+    );
+    res.status(204).end();
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .json({ message: 'Internal server error. Post could not be updated.' });
+  }
+});
+
 module.exports = postRouter;
