@@ -8,8 +8,6 @@ async function publish(e) {
     body: document.querySelector('#post-body').value.trim(),
   };
 
-  console.log(post);
-
   try {
     const response = await fetch('/api/post/', {
       method: 'POST',
@@ -19,8 +17,6 @@ async function publish(e) {
 
     if (response.ok) {
       document.location.replace('/dashboard');
-    } else {
-      alert('Could not post content');
     }
   } catch (err) {
     console.error(err);

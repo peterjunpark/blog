@@ -1,8 +1,9 @@
-module.exports = {
-  authUser: (req, res, next) => {
-    if (!req.session.logged_in) {
-      res.redirect('/login');
-    }
+const authUser = (req, res, next) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+  } else {
     next();
-  },
+  }
 };
+
+module.exports = authUser;

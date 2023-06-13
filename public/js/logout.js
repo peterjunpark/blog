@@ -8,7 +8,7 @@ async function logout() {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/login');
     }
   } catch (err) {
     console.error(err);

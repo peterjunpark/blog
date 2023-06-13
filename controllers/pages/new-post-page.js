@@ -1,14 +1,11 @@
 const router = require('express').Router();
+const authUser = require('../../utils/auth.js');
 
-router.get('/', (req, res) => {
-  if (!req.session.loggedIn) {
-    res.status(401).redirect('/login');
-  } else {
-    res.render('new-post', {
-      userId: req.session.userId,
-      loggedIn: req.session.loggedIn,
-    });
-  }
+router.get('/', authUser, (req, res) => {
+  res.render('new-post', {
+    userId: req.session.userId,
+    loggedIn: req.session.loggedIn,
+  });
 });
 
 module.exports = router;

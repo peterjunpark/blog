@@ -27,12 +27,8 @@ async function signup(e) {
       });
 
       if (response.ok) {
-        document.location.replace('/');
-      } else {
-        document.reload();
+        document.location.replace('/dashboard');
       }
-    } else {
-      document.reload();
     }
   } catch (err) {
     console.error(err);

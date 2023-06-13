@@ -16,9 +16,7 @@ async function login(e) {
     });
 
     if (response.ok) {
-      document.location.replace('/');
-    } else {
-      document.reload();
+      document.location.replace('/dashboard');
     }
   } catch (err) {
     console.error(err);
