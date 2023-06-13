@@ -32,4 +32,17 @@ postRouter.post('/', async (req, res) => {
   }
 });
 
+postRouter.delete('/:id', async (req, res) => {
+  try {
+    await Comment.destroy({ where: { post_id: req.params.id } });
+    await Post.destroy({ where: { id: req.params.id } });
+    res.status(204).end();
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .json({ message: 'Internal server error. Post could not be deleted.' });
+  }
+});
+
 module.exports = postRouter;

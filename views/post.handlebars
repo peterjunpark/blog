@@ -1,5 +1,15 @@
 {{! Post body is no longer truncated }}
 <div class='d-flex flex-column align-items-center container'>
+  {{#if postOwner}}
+    <div class='d-flex justify-content-around col-6' id='edit-btn-group'>
+      <button class='btn btn-secondary border-success' id='edit-post-btn'>Edit
+        this post</button>
+      <button
+        class='btn btn-secondary border-danger'
+        id='delete-post-btn'
+      >Delete this post</button>
+    </div>
+  {{/if}}
   <div
     data-post-id='{{post.id}}'
     class='container card col-7 m-1 border-info'
@@ -44,8 +54,8 @@
           </div>
         </div>
       {{/each}}
-      <button class='btn btn-secondary my-4 mb-5' id='new-comment-btn'>Write a
-        new comment</button>
+      <button class='btn btn-secondary my-4' id='new-comment-btn'>Write a new
+        comment</button>
 
       <form
         id='new-comment-form'
@@ -67,4 +77,4 @@
   </div>
 </div>
 
-<script src='../js/new-comment.js'></script>
+<script src='../js/edit-post.js'></script>
