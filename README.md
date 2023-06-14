@@ -1,5 +1,7 @@
 # Peter's Blog
-![status](https://img.shields.io/website?down_message=offline&label=heroku&up_message=online&url=https%3A%2F%2Fsheltered-coast-99428.herokuapp.com/)
+![status](https://img.shields.io/website?down_message=offline&label=heroku&up_message=online&url=https://intense-earth-36064.herokuapp.com/)
+
+https://intense-earth-36064.herokuapp.com/
 
 ## Description
 ### What is this?
