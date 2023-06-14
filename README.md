@@ -1,8 +1,6 @@
 # Peter's Blog
 ![status](https://img.shields.io/website?down_message=offline&label=heroku&up_message=online&url=https://intense-earth-36064.herokuapp.com/)
 
-https://intense-earth-36064.herokuapp.com/
-
 ## Description
 ### What is this?
 A simple blog where you can create, read, update, and delete blog posts and their comments.
