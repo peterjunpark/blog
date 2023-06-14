@@ -17,6 +17,8 @@ async function login(e) {
 
     if (response.ok) {
       document.location.replace('/dashboard');
+    } else {
+      alert('Could not sign in! Make sure your credentials are correct.');
     }
   } catch (err) {
     console.error(err);

@@ -27,6 +27,10 @@ async function signup(e) {
       if (response.ok) {
         document.location.replace('/dashboard');
       }
+    } else {
+      alert(
+        'Could not create account! Choose a different username and try again.'
+      );
     }
   } catch (err) {
     console.error(err);
